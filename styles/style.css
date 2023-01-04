@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+table td,
+table tr {
+    text-align: center;
+    height: auto;
+}
+
+table tr {
+    height: auto;
+}
+
+.btn-group {
+    display: flex;
+    gap: 5px;
+}
+
+/* modal  */
+
+.custom-modal {
+    width: 0%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+.custom-modal.active {
+    transition: all 0.4s ease-in;
+    z-index: 19;
+    opacity: 1;
+    width: 55%;
+}
+
+
+.custom-modal .modal_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 2px solid #0d6efd;
+}
+
+
+.custom-modal .profile_pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.custom-modal .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 5px 0;
+}
+
+.custom-modal .form-group label {
+    font-weight: bolder;
+}
+
+.custom-modal .form-group .form-control {
+    width: 200px;
+    justify-content: flex-end;
+    background: transparent;
+    border: transparent;
+    border-bottom: 2px solid #0d6efd;
+    border-radius: 0;
+}
+
+.custom-modal .form-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.custom-modal .close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Responsive part  */
+
+@media (max-width:1020px) {
+    .custom-modal.active {
+            width: 60%;
+        }
+}
+
+@media (max-width:991px) {
+    .custom-modal .modal_left {
+            border-right: 2px solid transparent;
+        }
+                .custom-modal .modal_right{
+                    padding: 0 50px;
+                   
+                }
+}
+
+@media (max-width:720px) {
+    .custom-modal.active {
+            width: 90%;
+            height: 90vh;
+            border-radius: 0;
+            overflow: auto;
+            border-radius: 10px;
+        }
+    .custom-modal .modal_right {
+            padding: 0 10px;
+    
+        }
+                .custom-modal .modal_right .form-group{
+                flex-direction: column;
+                margin: 10px 0;
+                }
+                .custom-modal .button-group {
+                    text-align: center;
+                }
+}
+
